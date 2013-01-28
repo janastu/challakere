@@ -25,6 +25,9 @@ function loadWayPoints(){
 					else {
 						count++;
 						var m =  L.marker(latlng).bindLabel(count.toString(), {noHide: true}).addTo(map).showLabel();
+						var template = _.template($('#image-item-template').html());
+						x = $('body').append(template({cnt: count, src: feature.properties.link1_href}));
+						console.log(x);
 						return m;
 					}
 				}
