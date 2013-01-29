@@ -45,7 +45,7 @@ function loadWayPoints(){
 						m.on('click',function(e){
 							e.target.bindPopup("<img src='"+feature.properties.link1_href+"' style='height:200px;width:200px;'>").openPopup();
 						});
-						if(i == wayPointList.length-1){
+						if(i == wayPointList.length){
 							this.appendLabels(photos);
 						}
 						return m;
@@ -56,7 +56,6 @@ function loadWayPoints(){
 	}
 }
 function appendLabels(x){
-	console.log("test");
 	x.eachLayer(function(layer){
 		layer.showLabel();
 	});
