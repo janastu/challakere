@@ -7,15 +7,17 @@ function init(){
 		maxZoom: 18,
 		attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery Â©<a href="http://cloudmade.com">CloudMade</a>'
 	});
+  var sat = L.tileLayer.provider("MapQuestOpen.Aerial");
 	var overlays = {
 		"Places" : markers,
 		"Photos": photos
 	};
 	var baseLayer = {
-		"Base Map": tileLayer
-	};
-	map = L.map('map', {layers:[tileLayer, markers, photos]}).setView([14.31336, 76.64973], 13);
-	map.minZoom = 13;
+		"Base Map": tileLayer,
+    "Satellite": sat
+  	};
+	map = L.map('map', {layers:[tileLayer, markers, photos, sat]}).setView([14.31336, 76.64973], 13);
+  map.minZoom = 13;
 	map.maxZoom = 13;
 	map.zoomControl = false;
 	L.control.scale({position: 'bottomleft'}).addTo(map);
