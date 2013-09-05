@@ -16,10 +16,10 @@ function init(){
 		"Base Map": tileLayer,
     "Satellite": sat
   	};
-	map = L.map('map', {layers:[tileLayer, markers, photos, sat]}).setView([14.31336, 76.64973], 13);
-  map.minZoom = 13;
+	map = L.map('map', {layers:[tileLayer, markers, photos, sat]}).setView([14.31336, 76.64973], 10);
+  map.minZoom = 10;
 	map.maxZoom = 13;
-	map.zoomControl = false;
+	map.zoomControl = true;
 	L.control.scale({position: 'bottomleft'}).addTo(map);
 	L.control.layers(baseLayer, overlays).addTo(map);
 	loadWayPoints();
