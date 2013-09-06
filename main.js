@@ -7,16 +7,17 @@ function init(){
 		maxZoom: 18,
 		attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery Â©<a href="http://cloudmade.com">CloudMade</a>'
 	});
-  var sat = L.tileLayer.provider("MapQuestOpen.Aerial");
+  // var sat = L.tileLayer.provider("MapQuestOpen.Aerial");
+  var bing = new L.BingLayer("AjuZVKHlyC5_471vh2TFunhEtLhMF9tI6TNBQddvUK0lpMJXrJmFBlCssPC68WxS");
 	var overlays = {
 		"Places" : markers,
 		"Photos": photos
 	};
 	var baseLayer = {
 		"Base Map": tileLayer,
-    "Satellite": sat
+    "Satellite": bing
   	};
-	map = L.map('map', {layers:[tileLayer, markers, photos, sat]}).setView([14.31336, 76.64973], 10);
+	map = L.map('map', {layers:[tileLayer, markers, photos, bing]}).setView([14.31336, 76.64973], 12);
   map.minZoom = 10;
 	map.maxZoom = 13;
 	map.zoomControl = true;
@@ -78,3 +79,5 @@ function loadTrackPoints() {
 		},'json');
 	}
 }
+
+
