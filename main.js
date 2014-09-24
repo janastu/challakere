@@ -3,7 +3,7 @@ var map;
 var markers = new L.LayerGroup();
 var photos = new L.LayerGroup();
 function init(){
-	var tileLayer = L.tileLayer('http://{s}.tile.cloudmade.com/157f9082094e402f89d242e9b9144483/997/256/{z}/{x}/{y}.png', {
+	var tileLayer = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
 		maxZoom: 18,
 		attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery Â©<a href="http://cloudmade.com">CloudMade</a>'
 	});
@@ -79,5 +79,3 @@ function loadTrackPoints() {
 		},'json');
 	}
 }
-
-
